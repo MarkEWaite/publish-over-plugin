@@ -35,7 +35,7 @@ import java.io.IOException;
 import java.io.Serializable;
 
 @SuppressWarnings("PMD.TooManyMethods")
-public abstract class BPHostConfiguration<CLIENT extends BPClient, COMMON_CONFIG> implements Serializable {
+public abstract class BPHostConfiguration<CLIENT extends BPClient, COMMON_CONFIG extends Serializable> implements Serializable {
 
     private static final long serialVersionUID = 1L;
 

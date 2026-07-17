@@ -23,6 +23,7 @@ import org.junit.jupiter.api.Test;
 import org.jvnet.hudson.test.JenkinsRule;
 
 import java.io.InputStream;
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.concurrent.Future;
 import org.jvnet.hudson.test.JenkinsRule.WebClient;
@@ -182,7 +183,7 @@ class BPPluginTest {
         }
     }
 
-    private static class DummyBPHostConfiguration extends BPHostConfiguration<DummyBPClient, Object> {
+    private static class DummyBPHostConfiguration extends BPHostConfiguration<DummyBPClient, Serializable> {
 
         @Override
         public DummyBPClient createClient(BPBuildInfo buildInfo) {
@@ -190,14 +191,14 @@ class BPPluginTest {
         }
     }
 
-    public static class DummyBPPlugin extends BPPlugin<BapPublisher<BPTransfer>, DummyBPClient, Object> {
+    public static class DummyBPPlugin extends BPPlugin<BapPublisher<BPTransfer>, DummyBPClient, Serializable> {
 
         public DummyBPPlugin(String consolePrefix) {
             super(consolePrefix);
         }
 
         @Override
-        public BPHostConfiguration<BPPluginTest.DummyBPClient, Object> getConfiguration(String name) {
+        public BPHostConfiguration<BPPluginTest.DummyBPClient, Serializable> getConfiguration(String name) {
             return new BPPluginTest.DummyBPHostConfiguration();
         }
 
