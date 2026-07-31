@@ -30,6 +30,7 @@ import jenkins.plugins.publish_over.BPClient;
 import jenkins.plugins.publish_over.BPHostConfiguration;
 
 import java.io.Serial;
+import java.io.Serializable;
 
 public class BPHostConfigurationFactory {
 
@@ -45,7 +46,7 @@ public class BPHostConfigurationFactory {
         return config;
     }
 
-    public static class ConcreteBPHostConfiguration<CLIENT extends BPClient> extends BPHostConfiguration<CLIENT, Object> {
+    public static class ConcreteBPHostConfiguration<CLIENT extends BPClient> extends BPHostConfiguration<CLIENT, Serializable> {
 
         @Serial
         private static final long serialVersionUID = 1L;

@@ -41,12 +41,13 @@ import org.apache.commons.lang.builder.ToStringStyle;
 
 import java.io.IOException;
 import java.io.PrintStream;
+import java.io.Serializable;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.TreeMap;
 
 @SuppressWarnings({ "PMD.LooseCoupling", "PMD.TooManyMethods" }) // serializable ... Map ...
-public abstract class BPPlugin<PUBLISHER extends BapPublisher, CLIENT extends BPClient, COMMON_CONFIG>
+public abstract class BPPlugin<PUBLISHER extends BapPublisher, CLIENT extends BPClient, COMMON_CONFIG extends Serializable>
             extends Notifier implements SimpleBuildStep, BPHostConfigurationAccess<CLIENT, COMMON_CONFIG> {
 
     public static final String PROMOTION_JOB_TYPE = "hudson.plugins.promoted_builds.PromotionProcess";
