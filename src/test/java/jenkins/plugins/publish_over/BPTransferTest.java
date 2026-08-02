@@ -28,7 +28,7 @@ import hudson.FilePath;
 import hudson.model.TaskListener;
 import jenkins.plugins.publish_over.helper.BPBuildInfoFactory;
 import jenkins.plugins.publish_over.helper.RandomFile;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.easymock.EasyMock;
 import org.easymock.IMocksControl;
 import org.junit.jupiter.api.BeforeEach;
